@@ -53,6 +53,7 @@ function App() {
       <p>Frequency:{freq}</p>
       <p>Difference:{diff}</p>
       < Tuner freq = {freq} diff = {diff} />
+      <button>hello</button>
       </div>
     </>
   )
