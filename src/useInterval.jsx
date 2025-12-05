@@ -8,7 +8,6 @@ export default function useInterval(callback, delay){
     }, [callback]); 
 
     useEffect(()=>{
- 
         if (delay!= null){ 
             let id = setInterval(()=> savedCallback.current(), delay); // call the callback function with the set delay 
             return () => clearInterval(id);
