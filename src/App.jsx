@@ -2,15 +2,16 @@ import { useState, useRef, useEffect } from 'react';
 import useAudioContext from './useAudioContext';
 import './App.css';
 import useInterval from './useInterval';
+import {GuitarTuner} from './Tuner'
 const MODEL_URL = "/crepeModel/"; 
-import Tuner from './Tuner'
 
 function App() {
   const audioContext = useAudioContext();
   const pitchDetector = useRef(null);
   const [freq, setFreq] = useState();
   const [modelLoaded, setModelLoaded] = useState(false); //set model to empty first 
-  const [diff, setDiff] = useState(null); // difference of pitch from desired pitch
+  const [string, setString] = useState(null); // difference of pitch from desired pitch
+  const [instrument, setInstrument] = useState("guitar");
   
   useEffect(()=> {
     (async()=> { 
@@ -39,22 +40,32 @@ function App() {
         } else if (freq){
           console.log(freq);
           setFreq(freq);
-          setDiff (freq-440);
         }
       });
     };
     detectPitch();
   }, 1000/30);
 
+
+  function handleInstrumentChange(name) {
+    setInstrument(name);
+  }
+
+  function handleStringChange(string){
+    setString(string);
+  }
+
   return (
     <>
-      <div className = "Pitchapp">
       {modelLoaded? <p>Model is loaded</p>: <p>Model not loaded</p>} 
+
       <p>Frequency:{freq}</p>
-      <p>Difference:{diff}</p>
-      < Tuner freq = {freq} diff = {diff} />
-      <button>hello</button>
-      </div>
+      <p>string{string}</p>
+
+
+      <GuitarTuner onInstrumentChange={handleInstrumentChange} />
+      <p>Current instrument: {instrument}</p>
+
     </>
   )
 }
