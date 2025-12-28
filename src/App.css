@@ -1,31 +1,187 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+html, body {
+  background-color: #D3B698;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.logo:hover {
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
 
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+} */
+
+
+.tuner{
+  border: black 8px solid;
+  width:100vw;
+  height: 100vh;
+  display: flex;
+  box-sizing: border-box;
+}
+.left,
+.right{
+  flex:1;
+  height: 100%;
+  box-sizing: border-box;
 }
 
-.card {
-  padding: 2em;
+.right {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items:center;
+  justify-content: space-between;
 }
 
-.read-the-docs {
-  color: #888;
+.button-row {
+  border: 8px solid black;  
+  width: 80%; 
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-.instrumentButton{
-  background-color: pink;
-  size: 100;
+.button-row button {  
+  color: white;
+  background-color:#673B20;
+  height: 80%;
+  width: 30%;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.guitarDisplay{
-  
+.instrument {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns:repeat(24, 1fr);
+  grid-template-rows: repeat(24,1fr) ; 
+  height: 80%;
+  width: 80%;
 }
+
+.img-container{
+  /* background-color: #673B20; */
+  grid-column: 4/ 22;
+  grid-row: 1/25;
+}
+
+.instrument-img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom;
+  display: block;
+}
+
+.left-buttons{
+  grid-column:2/6;
+  grid-row: 3/15;
+}
+
+.left-buttons button,
+.right-buttons button {
+  width: 70%;
+  height: 20%;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background-color: #673B20;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-buttons{
+  grid-column:20/24;
+  grid-row: 3/15;
+}
+
+.right-buttons,
+.left-buttons{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items:center;
+}
+
+/* Left side */
+
+.left{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-evenly;
+  align-items: center;
+
+}
+
+.instrument-label h1,
+.instrument-label h2 {
+  margin: 0;
+}
+
+.instrument-label{
+  /* background-color: white; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 30%;
+  width: 80%;
+  gap: 20px;
+}
+
+.tuner-display{
+  background-color: white; 
+  width: 80%;
+  height: 50%;
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+}
+
+.top-bar{
+  width: 95%;
+  height: 10;
+  display: flex;
+  align-items: flex-start;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

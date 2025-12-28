@@ -1,11 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
 import useAudioContext from './useAudioContext';
-import './App.css';
 import useInterval from './useInterval';
-import {GuitarTuner} from './Tuner'
 const MODEL_URL = "/crepeModel/"; 
+import Tuner from './Tuner';
 
-function App() {
+export default function App({String}) {
   const audioContext = useAudioContext();
   const pitchDetector = useRef(null);
   const [freq, setFreq] = useState();
@@ -46,28 +45,12 @@ function App() {
     detectPitch();
   }, 1000/30);
 
-
-  function handleInstrumentChange(name) {
-    setInstrument(name);
-  }
-
-  function handleStringChange(string){
-    setString(string);
-  }
-
   return (
     <>
-      {modelLoaded? <p>Model is loaded</p>: <p>Model not loaded</p>} 
-
+      {/* {modelLoaded? <p>Model is loaded</p>: <p>Model not loaded</p>} 
       <p>Frequency:{freq}</p>
-      <p>string{string}</p>
-
-
-      <GuitarTuner onInstrumentChange={handleInstrumentChange} />
-      <p>Current instrument: {instrument}</p>
-
+      <p>string{string}</p> */}
+      <Tuner/>
     </>
   )
 }
-
-export default App
