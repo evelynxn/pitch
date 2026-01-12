@@ -45,7 +45,6 @@ html, body {
 }
 
 .button-row {
-  border: 8px solid black;  
   width: 80%; 
   height: 10%;
   display: flex;
@@ -124,7 +123,7 @@ html, body {
 .left{
   display: flex;
   flex-direction: column;
-  justify-content:space-evenly;
+  justify-content:flex-start;
   align-items: center;
 
 }
@@ -145,6 +144,7 @@ html, body {
   gap: 20px;
 }
 
+
 .tuner-display{
   background-color: white; 
   width: 80%;
@@ -164,6 +164,32 @@ html, body {
   align-items: flex-start;
 }
 
+.display-text{
+  font-family: "Bebas Neue", "Arial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+}
+
+.instrument-label h1 {
+  font-size: clamp(5em, 3vw, 3.2rem);
+}
+
+.instrument-label h2 {
+  font-size: clamp(2rem, 2vw, 1.6rem);
+} 
+
+button.active{
+  background-color: white;
+  color: black;
+  transform: scale(1.1);
+}
+
+button.activeInstrument{
+  background-color: #A97E68;
+  color: white;
+  transform: scale(1.1);
+}
 
 
 
